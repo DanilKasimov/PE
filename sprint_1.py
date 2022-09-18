@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 import numpy as np
+import pandas as pn
 
 
 # Typical class
@@ -38,7 +39,6 @@ cat2 = Cat('Murzik', 8, 'Grey')
 print(cat1)
 print(cat2)
 print(cat1 == cat2)
-
 
 arr = np.arange(0, 20, 1)
 print(arr)
@@ -116,4 +116,20 @@ print(matrix)
 
 print(matrix.T)
 
+data = pn.Series(['Russian', 'English', 'Japanese'], index=['ru', 'en', 'jap'])
 
+print(data)
+
+print(data[['ru', 'jap']])
+
+data['usa'] = 'American'
+
+print(data)
+
+print(data.drop(index=['en']))
+
+print(data.max())
+
+data = pn.DataFrame([[1, 4, 5], [2, 6, 5]], index=['x', 'y'], columns=['1', '2', '3'])
+
+print(data)
